@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-button {
+  @apply hover:bg-sky-400 rounded shadow bg-sky-300 size-8 mt-2 text-gray-700;
+}
+
+.nav-top-container {
+  @apply p-4 pb-2 flex-wrap flex justify-between items-center;
+}
