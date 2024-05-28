@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "",
+    "type": "object",
+    "properties": {
+      "author": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 30
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 35
+      },
+      "content":{
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1000
+      }
+    },
+    "required": [
+      "author",
+      "title",
+      "content"
+    ]
+  }

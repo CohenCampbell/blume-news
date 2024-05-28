@@ -32,8 +32,21 @@ async function testConnection() {
     console.error("Connection Test Error:", err);
   } finally {
     await dbDisconnect();
-    console.log("Test: Connection Disconnected!");
+    console.log("Test: Connection from MongoDB disconnected!");
   }
 }
 
-module.exports = { dbConnect, dbDisconnect, testConnection };
+//users schema is epmty because I'm using json schema instead
+const User = mongoose.model(
+  "users",
+  new mongoose.Schema({}, { strict: false })
+);
+
+//article schema is epmty because I'm using json schema instead
+const Article = mongoose.model(
+  "articles",
+  new mongoose.Schema({}, { strict: false })
+);
+
+
+module.exports = { dbConnect, dbDisconnect, testConnection, User, Article };

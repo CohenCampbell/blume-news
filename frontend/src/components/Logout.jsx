@@ -1,23 +1,21 @@
 import React, { useEffect } from "react";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function Logout(){
+function Logout() {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  useEffect(() => {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("username");
+    navigate("/login");
+  }, []);
 
-    useEffect(()=>{
-        sessionStorage.removeItem("token");
-        sessionStorage.removeItem("email");
-        sessionStorage.removeItem("username");
-        navigate("/login")
-    }, [])
-
-    return(
-        <div className="flex justify-center items-center min-h-screen bg-sky-400">
-           Logging out...
-        </div>
-    )
+  return (
+    <div className="flex justify-center items-center min-h-screen bg-sky-400">
+      Logging out...
+    </div>
+  );
 }
-
 
 export default Logout;

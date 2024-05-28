@@ -5,16 +5,10 @@ const loginSchema = require("../schemas/login.json");
 const jsonschema = require("jsonschema");
 const { BadRequestError, UnauthorizedError } = require("../expressError");
 const bcrypt = require("bcrypt");
-const { default: mongoose } = require("mongoose");
-const { dbConnect, dbDisconnect } = require("../helpers.js/mongo");
+const { dbConnect, dbDisconnect, User } = require("../helpers.js/mongo");
 const { createToken } = require("../helpers.js/tokens");
 const { ensureCorrectUser } = require("../middleware/auth");
 
-//users schema is epmty because I'm using json schema instead
-const User = mongoose.model(
-  "users",
-  new mongoose.Schema({}, { strict: false })
-);
 const BCRYPT_WORK_FACTOR = process.env.NODE_ENV === "test" ? 1 : 12;
 
 router.post("/signUp", async function (req, res, next) {
@@ -100,5 +94,6 @@ router.delete("/:username", ensureCorrectUser, async function (req, res, next) {
     next(err);
   }
 });
+
 
 module.exports = router;
