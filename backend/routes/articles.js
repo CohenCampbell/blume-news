@@ -24,7 +24,8 @@ router.post("/:username", ensureCorrectUser, async function (req, res, next) {
       ...req.body,
       userId: user["_id"],
     });
-    return res.json(newArticle);
+    console.log(newArticle);
+    return res.status(201).json(newArticle);
   } catch (err) {
     next(err);
   } finally {

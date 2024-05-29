@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const uri = process.env.MONGO_URI;
+const uri =
+  process.env.NODE_ENV === "test"
+    ? process.env.MONGO_TEST_URI
+    : process.env.MONGO_URI;
+
 const clientOptions = {
   serverApi: { version: "1", strict: true, deprecationErrors: true },
 };
@@ -47,6 +51,5 @@ const Article = mongoose.model(
   "articles",
   new mongoose.Schema({}, { strict: false })
 );
-
 
 module.exports = { dbConnect, dbDisconnect, testConnection, User, Article };

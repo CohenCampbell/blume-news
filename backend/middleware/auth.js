@@ -29,9 +29,9 @@ function ensureLoggedIn(req, res, next) {
 function ensureCorrectUser(req, res, next) {
   try {
     const user = res.locals.user;
-    
+
     if (user !== req.params.username) {
-      console.log(res.locals.user, req.params.username)
+      console.log(res.locals.user, req.params.username);
       throw new UnauthorizedError();
     }
     return next();

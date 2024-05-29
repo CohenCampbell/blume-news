@@ -36,7 +36,7 @@ router.post("/signUp", async function (req, res, next) {
     const newUser = await User.create(req.body);
     const newUserEmail = newUser.email;
     const newUsername = newUser.username;
-    return res.json({
+    return res.status(201).json({
       token: createToken(req.body.username),
       email: newUserEmail,
       username: newUsername,
@@ -89,11 +89,10 @@ router.post("/login", async function (req, res, next) {
 router.delete("/:username", ensureCorrectUser, async function (req, res, next) {
   try {
     User.deleteOne({ username: req.params.username });
-    return res.json({response: "User was deleted!"})
+    return res.json({ response: "User was deleted!" });
   } catch (err) {
     next(err);
   }
 });
-
 
 module.exports = router;
