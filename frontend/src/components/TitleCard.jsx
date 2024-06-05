@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-function TitleCard({ title, description, author, url, content, urlToImage }) {
+function TitleCard({ title, description, url, urlToImage }) {
   return (
     <div className="shadow-md rounded overflow-hidden w-full bg-sky-500 text-white flex flex-col">
       <div className="p-3 pt-2">

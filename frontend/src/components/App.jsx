@@ -1,11 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  Route,
-  Routes,
-  Link,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import Homepage from "./Homepage";
 import Sidebar from "./Sidebar";
 import SignUp from "./SignUp";
@@ -14,7 +8,6 @@ import About from "./About";
 import Settings from "./Settings";
 import CreateArticle from "./CreateArticle";
 import Logout from "./Logout";
-import UserArticleList from "./UserArticleList";
 
 function App() {
   const navigate = useNavigate();

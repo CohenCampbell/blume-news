@@ -28,6 +28,7 @@ function Sidebar() {
             ) : undefined}
           </div>
           <button
+            id="menuBtn"
             onClick={() => setExtended(!extended)}
             className={
               extended

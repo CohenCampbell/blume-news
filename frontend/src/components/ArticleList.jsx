@@ -28,10 +28,8 @@ function ArticleList() {
           <TitleCard
             title={article.title}
             description={article.description}
-            author={article.author}
             url={article.url}
             urlToImage={article.urlToImage}
-            content={article.content}
             key={uuid()}
           />
         );
