@@ -12,7 +12,7 @@ The app is very similar to other socail websites, just create an account, and us
 To run this project locally, you will need to add the following environment variables to your .env file
 
 #### For the frontend:
-`REACT_APP_BASE_URL`
+ No Environment Variables are needed for the frontend
 
 #### For the backend:
 
